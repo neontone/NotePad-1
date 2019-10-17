@@ -1,17 +1,19 @@
 package tsi.notepad;
 
 public class Person {
+    private static int counter = 0;
     private int id;
     private String name;
     private String surname;
     private String phone;
 
+    public Person() {
+        counter++;
+        id = counter;
+    }
+    
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
