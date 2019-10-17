@@ -11,7 +11,7 @@ public class Person {
         counter++;
         id = counter;
     }
-    
+
     public int getId() {
         return id;
     }
