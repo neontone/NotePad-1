@@ -1,19 +1,20 @@
 package tsi.notepad;
 
-public class Person {
-    private static int counter = 0;
-    private int id;
+public class Person extends Record {
     private String name;
     private String surname;
     private String phone;
+    private String email;
 
-    public Person() {
-        counter++;
-        id = counter;
-    }
-
-    public int getId() {
-        return id;
+    public void askInfo() {
+        System.out.print("Name> ");
+        name = Main.scan.next();
+        System.out.print("Surname> ");
+        surname = Main.scan.next();
+        System.out.print("Phone> ");
+        phone = Main.scan.next();
+        System.out.print("Email> ");
+        email = Main.scan.next();
     }
 
     public String getName() {
@@ -38,5 +39,24 @@ public class Person {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + getId() +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

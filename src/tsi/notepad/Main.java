@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static Scanner scan = new Scanner(System.in);
-    static ArrayList<Person> records = new ArrayList<>();
+    static final Scanner scan = new Scanner(System.in);
+    static ArrayList<Record> records = new ArrayList<>();
 
     public static void main(String[] args) {
         System.out.println("Enter a command. Type 'help' for help.");
@@ -32,12 +32,8 @@ public class Main {
     }
 
     private static void listRecords() {
-        for (Person p : records) {
-            System.out.printf("%d %s %s %s\n",
-                    p.getId(),
-                    p.getName(),
-                    p.getSurname(),
-                    p.getPhone());
+        for (Record p : records) {
+            System.out.println(p);
         }
     }
 
@@ -54,18 +50,14 @@ public class Main {
     }
 
     private static void createPerson() {
-        System.out.print("Name> ");
-        String name = scan.next();
-        System.out.print("Surname> ");
-        String surname = scan.next();
-        System.out.print("Phone> ");
-        String phone = scan.next();
-
         Person p = new Person();
-        p.setName(name);
-        p.setSurname(surname);
-        p.setPhone(phone);
+        p.askInfo();
+        records.add(p);
+    }
 
+    private static void createNote() {
+        Note p = new Note();
+        p.askInfo();
         records.add(p);
     }
 
