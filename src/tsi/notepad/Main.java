@@ -1,9 +1,11 @@
 package tsi.notepad;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     static Scanner scan = new Scanner(System.in);
+    static ArrayList<Person> records = new ArrayList<>();
 
     public static void main(String[] args) {
         System.out.println("Enter a command. Type 'help' for help.");
@@ -43,7 +45,7 @@ public class Main {
         String name = scan.next();
         System.out.print("Surname> ");
         String surname = scan.next();
-        System.out.println("Phone> ");
+        System.out.print("Phone> ");
         String phone = scan.next();
 
         Person p = new Person();
@@ -51,7 +53,7 @@ public class Main {
         p.setSurname(surname);
         p.setPhone(phone);
 
-
+        records.add(p);
     }
 
     private static void showHelp() {
