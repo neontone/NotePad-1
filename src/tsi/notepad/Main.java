@@ -22,9 +22,22 @@ public class Main {
                 case "create":
                     createRecord();
                     break;
+                case "list":
+                    listRecords();
+                    break;
                 default:
                     System.out.println("Error: Unknown command");
             }
+        }
+    }
+
+    private static void listRecords() {
+        for (Person p : records) {
+            System.out.printf("%d %s %s %s\n",
+                    p.getId(),
+                    p.getName(),
+                    p.getSurname(),
+                    p.getPhone());
         }
     }
 
