@@ -9,6 +9,12 @@ public class Note extends Record {
         text = Main.scan.next();
     }
 
+    @Override
+    public boolean contains(String str) {
+        return super.contains(str)
+                || text.contains(str);
+    }
+
     public String getText() {
         return text;
     }

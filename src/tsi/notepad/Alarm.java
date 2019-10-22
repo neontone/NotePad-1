@@ -10,6 +10,12 @@ public class Alarm extends Note {
         time = Main.scan.next();
     }
 
+    @Override
+    public boolean contains(String str) {
+        return super.contains(str)
+                || time.contains(str);
+    }
+
     public String getTime() {
         return time;
     }
