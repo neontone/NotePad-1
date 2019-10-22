@@ -6,7 +6,8 @@ public class Person extends Record {
     private String phone;
     private String email;
 
-    public void askPersonInfo() {
+    @Override
+    public void askInfo() {
         System.out.print("Name> ");
         name = Main.scan.next();
         System.out.print("Surname> ");

@@ -3,7 +3,8 @@ package tsi.notepad;
 public class Note extends Record {
     private String text;
 
-    public void askNoteInfo() {
+    @Override
+    public void askInfo() {
         System.out.print("text> ");
         text = Main.scan.next();
     }

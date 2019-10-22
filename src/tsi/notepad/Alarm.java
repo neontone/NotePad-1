@@ -3,8 +3,9 @@ package tsi.notepad;
 public class Alarm extends Note {
     private String time;
 
-    public void askAlarmInfo() {
-        askNoteInfo();
+    @Override
+    public void askInfo() {
+        super.askInfo();
         System.out.print("time> ");
         time = Main.scan.next();
     }
