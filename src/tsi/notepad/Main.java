@@ -44,6 +44,9 @@ public class Main {
             case "person":
                 createPerson();
                 break;
+            case "note":
+                createNote();
+                break;
             default:
                 System.out.println("Error: Unknown record type");
         }
