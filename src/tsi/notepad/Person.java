@@ -6,7 +6,7 @@ public class Person extends Record {
     private String phone;
     private String email;
 
-    public void askInfo() {
+    public void askPersonInfo() {
         System.out.print("Name> ");
         name = Main.scan.next();
         System.out.print("Surname> ");

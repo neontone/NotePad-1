@@ -47,20 +47,29 @@ public class Main {
             case "note":
                 createNote();
                 break;
+            case "alarm":
+                createAlarm();
+                break;
             default:
                 System.out.println("Error: Unknown record type");
         }
     }
 
+    private static void createAlarm() {
+        Alarm a = new Alarm();
+        a.askAlarmInfo();
+        records.add(a);
+    }
+
     private static void createPerson() {
         Person p = new Person();
-        p.askInfo();
+        p.askPersonInfo();
         records.add(p);
     }
 
     private static void createNote() {
         Note p = new Note();
-        p.askInfo();
+        p.askNoteInfo();
         records.add(p);
     }
 
