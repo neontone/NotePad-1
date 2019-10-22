@@ -26,15 +26,28 @@ public class Main {
                 case "list":
                     listRecords();
                     break;
+                case "find":
+                    findRecords();
+                    break;
                 default:
                     System.out.println("Error: Unknown command");
             }
         }
     }
 
+    private static void findRecords() {
+        System.out.print("substring> ");
+        String str = scan.next();
+        for (Record r : records) {
+            if (r.contains(str)) {
+                System.out.println(r);
+            }
+        }
+    }
+
     private static void listRecords() {
-        for (Record p : records) {
-            System.out.println(p);
+        for (Record r : records) {
+            System.out.println(r);
         }
     }
 
