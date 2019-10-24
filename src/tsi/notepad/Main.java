@@ -1,5 +1,6 @@
 package tsi.notepad;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -29,6 +30,9 @@ public class Main {
                 case "find":
                     findRecords();
                     break;
+                case "delete":
+                    deleteRecord();
+                    break;
                 default:
                     System.out.println("Error: Unknown command");
             }
@@ -44,6 +48,20 @@ public class Main {
             }
         }
     }
+
+    private static void deleteRecord() {
+        System.out.print("id> ");
+        int id = scan.nextInt();
+        for (int i = 0; i < records.size(); i++) {
+            Record r = records.get(i);
+            if (id == r.getId()) {
+                records.remove(i);
+                break;
+            }
+        }
+    }
+
+
 
     private static void listRecords() {
         for (Record r : records) {
@@ -63,6 +81,9 @@ public class Main {
                 break;
             case "alarm":
                 createRecord(new Alarm());
+                break;
+            case "reminder":
+                createRecord(new Reminder());
                 break;
             default:
                 System.out.println("Error: Unknown record type");
