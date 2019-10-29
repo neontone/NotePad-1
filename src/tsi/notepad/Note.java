@@ -5,8 +5,7 @@ public class Note extends Record {
 
     @Override
     public void askInfo() {
-        System.out.print("text> ");
-        text = Main.scan.next();
+        text = Asker.askString("text>");
     }
 
     @Override

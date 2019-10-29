@@ -4,16 +4,15 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static tsi.notepad.Asker.scan;
+
 public class Main {
-    static final Scanner scan = new Scanner(System.in);
     static ArrayList<Record> records = new ArrayList<>();
 
     public static void main(String[] args) {
-        scan.useDelimiter("\n");
         System.out.println("Enter a command. Type 'help' for help.");
         for (; ; ) {
-            System.out.print("> ");
-            String cmd = scan.next();
+            String cmd = Asker.askString("cmd");
             switch (cmd) {
                 case "exit":
                     System.out.println("Good bye!");
@@ -40,8 +39,7 @@ public class Main {
     }
 
     private static void findRecords() {
-        System.out.print("substring> ");
-        String str = scan.next();
+        String str = Asker.askString("substring>");
         for (Record r : records) {
             if (r.contains(str)) {
                 System.out.println(r);
@@ -50,8 +48,7 @@ public class Main {
     }
 
     private static void deleteRecord() {
-        System.out.print("id> ");
-        int id = scan.nextInt();
+        int id = Asker.askInt("id");
         for (int i = 0; i < records.size(); i++) {
             Record r = records.get(i);
             if (id == r.getId()) {
@@ -70,8 +67,7 @@ public class Main {
     }
 
     private static void createRecord() {
-        System.out.print("type> ");
-        String type = scan.next();
+        String type = Asker.askString("type> ");
         switch (type) {
             case "person":
                 createRecord(new Person());
