@@ -40,7 +40,7 @@ public class Asker {
                 String answer = scan.next();
                 return LocalDate.parse(answer, DATE_FORMAT);
             } catch (DateTimeParseException e) {
-                System.out.println("Required format: " + DATE_FORMAT);
+                System.out.println("Required format: YYYY.MM.DD");
             }
         }
     }
@@ -52,7 +52,7 @@ public class Asker {
                 String answer = scan.next();
                 return LocalTime.parse(answer, TIME_FORMAT);
             } catch (DateTimeParseException e) {
-                System.out.println("Required format: " + TIME_FORMAT);
+                System.out.println("Required format: HH:MM");
             }
         }
     }
