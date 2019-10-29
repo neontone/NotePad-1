@@ -6,8 +6,7 @@ public class Reminder extends Alarm {
 
     @Override
     public void askInfo() {
-        String strDate = Asker.askString("Set date (Format: YYYY.MM.DD) > ");
-        date = LocalDate.parse(strDate, Asker.DATE_FORMAT);
+        date = Asker.askDate("Set date (Format: YYYY.MM.DD) > ");
         super.askInfo();
     }
 
