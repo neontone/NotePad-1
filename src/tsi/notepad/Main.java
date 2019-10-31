@@ -1,6 +1,7 @@
 package tsi.notepad;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
@@ -35,8 +36,22 @@ public class Main {
                 case "dismiss":
                     dismissRecord();
                     break;
+                case "delete all":
+                    deleteAll();
+                    break;
                 default:
                     System.out.println("Error: Unknown command");
+            }
+        }
+    }
+
+    private static void deleteAll() {
+        String substr = Asker.askString("substring");
+        Iterator<Record> iterator = records.iterator();
+        while (iterator.hasNext()) {
+            Record r = iterator.next();
+            if (r.contains(substr)) {
+                iterator.remove();
             }
         }
     }
